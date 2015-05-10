@@ -115,7 +115,7 @@ display: block;
 		background-color:black!important;
 	}
 
-	.nav a:active, .nav a:focus
+	.nav a:active
 	 {
 		background-color:black!important;
 		color:#0066FF!important;
@@ -143,11 +143,7 @@ display: block;
 .projectTabs li.active a{background-color: #0066FF!important; color:white!important;}
 	
 	
-.projectTabs a:focus {
-		background-color: #0066FF!important;
-		color:white!important;
-		
-	}
+
 	
 	html{
 	background-color:black;
@@ -163,7 +159,8 @@ display: block;
 	}
 	
 	.projectListElement{
-	width:33%!important;
+	width:32%!important;
+	text-align:center!important;
 	}
 	
 	#projectList{
@@ -347,7 +344,7 @@ display: block;
 	margin:0 0.1% 0.1% 0;
     height:50vh;
     border-radius:0.1%;
-	padding:0.1%;
+	padding:1%;
 	
     
     float:left;
@@ -383,18 +380,30 @@ overflow:auto;
 		clear:right;
 	}
 	
+	.homeInfoHeader
+	{
+		margin-bottom:1vw;
+		text-align:center;
+	}
+	
 	.homeInfo
 	{
-		min-height:100px;
-		max-height:1000px;
 		text-align:left;
-		display: block;
+		display: inline-block;
 		float:left;
-		width: 60vw;
+		width: 60%;
 		margin-top:2vw;
-		margin-left:20vw;
-		margin-right:20vw;
+		margin-right:13%;
+		
 		clear:right;
+	}
+	.homeProfilePicture{
+		float:left;
+		width:20%;
+		display:inline-block;
+		margin-left:2%;
+		margin-right:3%;
+		margin-top:2vw;
 	}
 	
 	.linkedincontainer, #linkedincontainermain{
@@ -409,6 +418,27 @@ overflow:auto;
 
 @media only screen and (max-width : 640px) {/*640*/
 
+	.homeInfo
+	{
+		text-align:left;
+		display: block;
+		float:left;
+		width: 60%;
+		margin-top:2vw;
+		margin-right:20%;
+		margin-left:20%;
+		clear:right;
+	}
+	
+	.homeProfilePicture{
+		float:left;
+		width:50%;
+		display:block;
+		margin-left:25%;
+		margin-right:25%;
+		margin-top:2vw;
+	}
+
 	#projectList{
 	width:100%;
 	margin-left:auto;
@@ -417,6 +447,7 @@ overflow:auto;
 	
 	.projectListElement{
 	width:100%!important;
+	text-align:center!important;
 	}
 
 	#menu-icon {
