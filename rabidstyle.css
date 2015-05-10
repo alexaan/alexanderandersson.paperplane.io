@@ -148,8 +148,33 @@ display: block;
 		color:white!important;
 		
 	}
+	
+	html{
+	background-color:black;
+	}
+	
+	#projectListLabel{
+	width:50vw;
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	font-weight: bold;
+	margin-top:1vh;
+	}
+	
+	.projectListElement{
+	width:33%!important;
+	}
+	
+	#projectList{
+	width:50%;
+	margin-left:auto;
+	margin-right:auto;
+	}
 
 	body {
+		float:left;
+		background-color:white;
 		width:100%;
 		font-family: Helvetica,Arial;
 		font-size: 10pt;
@@ -383,6 +408,16 @@ overflow:auto;
 /*MEDIA QUERY*/
 
 @media only screen and (max-width : 640px) {/*640*/
+
+	#projectList{
+	width:100%;
+	margin-left:auto;
+	margin-right:auto;
+	}
+	
+	.projectListElement{
+	width:100%!important;
+	}
 
 	#menu-icon {
 

@@ -1,14 +1,15 @@
 <section class="projectTabs" ng-controller="CustomHeaderCtrl as hc">
-<ul id="fixedprojectheader" class="nav nav-pills">
-            <li data-ng-click="sortCategory('masterprosjekt')" ng-class="{ active:hc.isSet(1) }">
+<div id="projectListLabel">Select a project:</div>
+<ul id="projectList" class="nav nav-pills">
+            <li class="projectListElement" ng-class="{ active:hc.isSet(1) }">
               <a href="" ng-click="hc.setTab(1)">Master Project</a>
 			  <!--<a href="" ng-click="setProjectId(3); projectTabs.setTab(1)">Masteroppgave</a>-->
 			  <!--<a href="" ng-click="projectTabs.handleClick(1)">Masteroppgave</a>-->
             </li>
-            <li ng-class="{ active:hc.isSet(2) }">
+            <li class="projectListElement" ng-class="{ active:hc.isSet(2) }">
               <a href="" ng-click="hc.setTab(2)">Specialisation Project</a>
             </li>
-            <li ng-class="{ active:hc.isSet(3) }">
+            <li class="projectListElement" ng-class="{ active:hc.isSet(3) }">
               <a href="" ng-click="hc.setTab(3)">Android Game</a>
             </li>
           </ul>
