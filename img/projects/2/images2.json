@@ -1,0 +1,57 @@
+[
+	{
+        "title":"Test Day",
+        "id":"ED02-0185-02",
+        "desc":"Screencapture from a GOPRO video recorded when the application was tested in a make-shift museum at NTNU by students. Here a player is browsing digital information for a painting in prepration for creating and answering questions about it.",
+        "image":"testday.png"
+    },
+	{
+        "title":"Test Day",
+        "id":"ED02-0185-02",
+        "desc":"Screencapture from a GOPRO video recorded when the application was tested in a make-shift museum at NTNU by students. The player to the left is creating a question, while the player to the right is attempting to scan the painting.",
+        "image":"testday2.png"
+    },
+	{
+        "title":"Application Screens",
+        "id":"ED02-0185-05",
+        "desc":"Screenshots of the application from testing on a printed 'painting' attached to a whiteboard. In the image to the left the player is about to answer a question related to the painting.",
+        "image":"screens.png"
+    },
+	{
+        "title":"Application Usage",
+        "id":"ED02-0185-01",
+        "desc":"Early concept of how the application should look when a painting had been successfully scanned. Information and related images would be animated next to the painting, and buttons to create/answer questions and toggle sound on/off becomes available.",
+        "image":"AppUsage.png"
+    },
+    {
+        "title":"Unity AR",
+        "id":"ED03-0078-1",
+        "desc":"The Augmented Reality part of the application was developed in Unity 3D.",
+        "image":"ARscene_unity.png"
+    },
+    {
+        "title":"Database Overview",
+        "id":"EC03-0154-3",
+        "desc":"Overview of the database structure built for the application.",
+        "image":"db_overview.png"
+    },
+    {
+        "title":"Likert Scale",
+        "id":"EC05-0090-19",
+        "desc":"Several sessions of users testing produced statistics that helped to indicate strong and weak points of the application.",
+        "image":"likert_scale.png"
+    },
+    {
+        "title":"Server Client",
+        "id":"ED06-0208-1",
+        "desc":"The application used a SQL database to track progress in active game sessions and to retrieve textual data including quiz questions and other textual information as required. The server also held a file repository containing images and sounds that would be loaded by players. Server-side PHP scripts were used for communication between server and client. The C#-based mobile client would utilise a Vuforia Cloud Database to recognise 'paintings'.",
+        "image":"ServerClient.png"
+    },
+	{
+        "title":"Use Case",
+        "id":"ED06-0208-1",
+        "desc":"Use case for the whole system concept. Implementation was focused around the 'Play Game' part.",
+        "image":"usecase.png"
+    }
+	
+]

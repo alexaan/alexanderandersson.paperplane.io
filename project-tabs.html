@@ -1,0 +1,246 @@
+<section class="projectTabs" ng-controller="CustomHeaderCtrl as hc">
+<ul id="fixedprojectheader" class="nav nav-pills">
+            <li data-ng-click="sortCategory('masterprosjekt')" ng-class="{ active:hc.isSet(1) }">
+              <a href="" ng-click="hc.setTab(1)">Master Project</a>
+			  <!--<a href="" ng-click="setProjectId(3); projectTabs.setTab(1)">Masteroppgave</a>-->
+			  <!--<a href="" ng-click="projectTabs.handleClick(1)">Masteroppgave</a>-->
+            </li>
+            <li ng-class="{ active:hc.isSet(2) }">
+              <a href="" ng-click="hc.setTab(2)">Specialisation Project</a>
+            </li>
+            <li ng-class="{ active:hc.isSet(3) }">
+              <a href="" ng-click="hc.setTab(3)">Android Game</a>
+            </li>
+          </ul>
+          <div class ="bgpar" ng-show="hc.isSet(1)">
+		  
+						<h4 class="projectInfoHeader">Master Project: The Molecular Modeling Language GEMAL</h4>
+						
+						<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> Troux Architect (Metis), C#</p>
+						<div class="bg" ng-controller="GalleryController">
+						
+						<!--    Layout the large images horizontally using viewwindow
+							to hide the overflow (all but the current image). -->
+							<div class="mainimageshell">
+								<div class="viewwindow">
+							<!--    fullscroller is referenced from the Controller js
+									to control scrolling -->
+									<ul id="fullscroller" class="fullsizelist" ng-style="listposition" >
+								<!--    Iterate through all images and display them end to end -->
+										<li class="largecontainer" ng-repeat="image in galleryData1">
+											<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+1+'/'+image.image}}" />
+											<!--<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+'/master/'+image.image}}" />-->
+										</li>
+									</ul>
+									
+									<a class="arrow prev" href="#" ng-click="myNavigate(1, 'prev')"></a>
+									<a class="arrow next" href="#" ng-click="myNavigate(1, 'next')"></a>
+								</div>
+							</div>
+							
+							<!-- Display the description of the current image -->
+							<div class="captionshell">
+								<!--<p class="caption">{{selected.desc}}</p>-->
+								<p class="caption">{{selectedData.desc}}</p>
+							</div>
+							
+							<div style="clear:both;"></div>
+							
+					<!--    Layout the large images horizontally using viewwindow
+							to hide the overflow (all but the current image). -->
+							<div class="thumbsshell">
+								<div class="thumbswrapper">
+									<ul>
+								<!--    Iterate through all images and display them end to end as thumbs -->
+										<li ng-repeat="image in galleryData1">
+											<div class="thumbwrapper">
+										<!--    Note ng-click here calls the scrollTo function found in the
+												controller and passes it its index. This is used to scroll 
+												the large image to the correct image -->
+												<a ng-href="" ng-click="scrollTo(image,$index)">
+													<!--<img class="thumbnail" ng-src="{{IMAGE_LOCATION+'/master/'+image.image}}" />-->
+													<img class="thumbnail" ng-src="{{IMAGE_LOCATION+1+'/'+image.image}}" />
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Shameless self-promotion 
+							<div class="logoshell">
+								<a href="http://rabidgadfly.com/2013/03/super-easy-angular-image-gallery/" target="_blank" title="Check out more Angular posts at rabidGadfly.com"><img src="http://rabidgadfly.com/assets/logos/rabidgadfly-plunker-100.jpg" alt="rabidGadfly.com"/></a>
+							</div>-->
+							
+						</div>
+						<div class="projectInfoContainer">
+							<p class ="projectInfo">Traditional modelling languages focus on modeling according to a specific modeling perspective,
+							e.g. being primarily process-oriented or object-oriented. Even if newer languages such as
+							UML and EEML combines several perspectives, they typically do so by combining several
+							single-perspective modelling languages. Because of this is the resulting languages are
+							large and cumbersome to learn and to use.</p>
+							<p class="projectInfo">An alternative approach is so-called holistic modelling languages, where a limited number of
+							concepts can be combined in an orthogonal fashion. The task set out to work further on a proposal
+							for such a language (GEMAL), implement it in the Troux family of meta-modelling tools (previously 'Metis'), and evaluate it
+							through case studies and empirical evaluation techniques.</p>
+						</div>
+		</div>
+          <div ng-show="hc.isSet(2)">
+		  
+						<h4 class="projectInfoHeader">Specialisation Project: Augmented Reality and Serious Games for Learning</h4>
+						
+						<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> C#, PHP, MySQL, Unity 3D, Vuforia SDK</p>
+		  
+						<div class="bg" ng-controller="GalleryController">
+						
+						<!--    Layout the large images horizontally using viewwindow
+							to hide the overflow (all but the current image). -->
+							<div class="mainimageshell">
+								<div class="viewwindow">
+							<!--    fullscroller is referenced from the Controller js
+									to control scrolling -->
+									<ul id="fullscroller" class="fullsizelist" ng-style="listposition" >
+								<!--    Iterate through all images and display them end to end -->
+										<li class="largecontainer" ng-repeat="image in galleryData2"><!--galleryDataFordypning-->
+											<!--<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+'/fordypning/'+image.image}}" />-->
+											<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+2+'/'+image.image}}" ng-swipe-right="showPrev()" ng-swipe-left="showNext()">
+										</li>
+									</ul>
+									<a class="arrow prev" href="#" ng-click="myNavigate(2, 'prev')"></a>
+									<a class="arrow next" href="#" ng-click="myNavigate(2, 'next')"></a>
+								</div>
+								
+							</div>
+							
+							<!-- Display the description of the current image -->
+							<div class="captionshell">
+								<p class="caption">{{selectedData2.desc}}</p>
+							</div>
+							
+							<div style="clear:both;"></div>
+							
+							<!--    Layout the large images horizontally using viewwindow
+							to hide the overflow (all but the current image). -->
+							<div class="thumbsshell">
+								<div class="thumbswrapper">
+									<ul>
+								<!--    Iterate through all images and display them end to end as thumbs -->
+										<li ng-repeat="image in galleryData2">
+											<div class="thumbwrapper">
+										<!--    Note ng-click here calls the scrollTo function found in the
+												controller and passes it its index. This is used to scroll 
+												the large image to the correct image -->
+												<a ng-href="" ng-click="scrollTo(image,$index)">
+													<!--<img class="thumbnail" ng-src="{{IMAGE_LOCATION+'/fordypning/'+image.image}}" />-->
+													<img class="thumbnail" ng-src="{{IMAGE_LOCATION+2+'/'+image.image}}" />
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!--<ul class="nav">
+								<li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
+									<img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
+								</li>
+							</ul>-->
+							<!-- prev / next controls -->
+							<!--<a class="arrow prev" href="#" ng-click="showPrev()">Henny1</a>-->
+							
+
+							
+							<!-- Shameless self-promotion 
+							<div class="logoshell">
+								<a href="http://rabidgadfly.com/2013/03/super-easy-angular-image-gallery/" target="_blank" title="Check out more Angular posts at rabidGadfly.com"><img src="http://rabidgadfly.com/assets/logos/rabidgadfly-plunker-100.jpg" alt="rabidGadfly.com"/></a>
+							</div>-->
+							
+						</div>
+						
+					<div class="projectInfoContainer">
+						<p class ="projectInfo">My Specialisation Project was on the topics of 'Augmented Reality' and 'Serious Games for Learning'.</p>
+							<p class="projectInfo">An alternative approach is so-called holistic modelling languages, where a limited number of
+							concepts can be combined in an orthogonal fashion. The task set out to work further on a proposal
+							for such a language (GEMAL), implement it in the METIS family of meta-modelling tools, and evaluate it
+							through case studies and empirical evaluation techniques.</p>
+							
+						<p class ="projectInfo">My Specialisation Project was on the topics of 'Augmented Reality' and 'Serious Games for Learning'.</p>
+							<p class="projectInfo">An alternative approach is so-called holistic modelling languages, where a limited number of
+							concepts can be combined in an orthogonal fashion. The task set out to work further on a proposal
+							for such a language (GEMAL), implement it in the METIS family of meta-modelling tools, and evaluate it
+							through case studies and empirical evaluation techniques.</p>
+							
+						<p class ="projectInfo">My Specialisation Project was on the topics of 'Augmented Reality' and 'Serious Games for Learning'.</p>
+							<p class="projectInfo">An alternative approach is so-called holistic modelling languages, where a limited number of
+							concepts can be combined in an orthogonal fashion. The task set out to work further on a proposal
+							for such a language (GEMAL), implement it in the METIS family of meta-modelling tools, and evaluate it
+							through case studies and empirical evaluation techniques.</p>
+							
+						<p class ="projectInfo">My Specialisation Project was on the topics of 'Augmented Reality' and 'Serious Games for Learning'.</p>
+							<p class="projectInfo">An alternative approach is so-called holistic modelling languages, where a limited number of
+							concepts can be combined in an orthogonal fashion. The task set out to work further on a proposal
+							for such a language (GEMAL), implement it in the METIS family of meta-modelling tools, and evaluate it
+							through case studies and empirical evaluation techniques yo.</p>
+							
+							<p class ="projectInfo">My Specialisation Project was on the topics of 'Augmented Reality' and 'Serious Games for Learning'.</p>
+							<p class="projectInfo">An alternative approach is so-called holistic modelling languages, where a limited number of
+							concepts can be combined in an orthogonal fashion. The task set out to work further on a proposal
+							for such a language (GEMAL), implement it in the METIS family of meta-modelling tools, and evaluate it
+							through case studies and empirical evaluation techniques yoss.</p>
+					</div>
+          </div>
+          <div ng-show="hc.isSet(3)">
+		  <p>Androidoppgave yo!</p>
+		  
+						<div class="bg" ng-controller="GalleryController">
+						
+						<!--    Layout the large images horizontally using viewwindow
+							to hide the overflow (all but the current image). -->
+							<div class="mainimageshell">
+								<div class="viewwindow">
+							<!--    fullscroller is referenced from the Controller js
+									to control scrolling -->
+									<ul id="fullscroller" class="fullsizelist" ng-style="listposition" >
+								<!--    Iterate through all images and display them end to end -->
+										<li class="largecontainer" ng-repeat="image in galleryData3"><!--galleryDataFordypning-->
+											<!--<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+'/fordypning/'+image.image}}" />-->
+											<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+3+'/'+image.image}}" />
+										</li>
+									</ul>
+								</div>
+							</div>
+							
+							<!-- Display the description of the current image -->
+							<div class="captionshell">
+								<p class="caption">{{selectedData3.desc}}</p>
+							</div>
+							
+							<div style="clear:both;"></div>
+							
+							<!--    Layout the large images horizontally using viewwindow
+							to hide the overflow (all but the current image). -->
+							<div class="thumbsshell">
+								<div class="thumbswrapper">
+									<ul>
+								<!--    Iterate through all images and display them end to end as thumbs -->
+										<li ng-repeat="image in galleryData3">
+											<div class="thumbwrapper">
+										<!--    Note ng-click here calls the scrollTo function found in the
+												controller and passes it its index. This is used to scroll 
+												the large image to the correct image -->
+												<a ng-href="" ng-click="scrollTo(image,$index)">
+													<!--<img class="thumbnail" ng-src="{{IMAGE_LOCATION+'/fordypning/'+image.image}}" />-->
+													<img class="thumbnail" ng-src="{{IMAGE_LOCATION+3+'/'+image.image}}" />
+												</a>
+											</div>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<!-- Shameless self-promotion 
+							<div class="logoshell">
+								<a href="http://rabidgadfly.com/2013/03/super-easy-angular-image-gallery/" target="_blank" title="Check out more Angular posts at rabidGadfly.com"><img src="http://rabidgadfly.com/assets/logos/rabidgadfly-plunker-100.jpg" alt="rabidGadfly.com"/></a>
+							</div>-->
+							
+						</div>
+          </div>
+</section>

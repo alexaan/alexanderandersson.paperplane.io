@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html ng-app="galleryApp">
+  <head>
+  
+	<meta charset="utf-8" />
+    <meta name="author" content="Alexander Andersson" />
+    <title>Alexander Andersson | Personal webpage</title>
+    <meta name="description" content="Photo Gallery with AngularJS and CSS3 - demo page">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+	
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="products.js"></script>
+	
+	<!--<script src="http://code.angularjs.org/1.2.0rc1/angular-animate.min.js"></script>
+	<script src="http://code.angularjs.org/1.2.0rc1/angular-touch.min.js"></script>-->
+	
+    <link rel="stylesheet" href="rabidstyle.css">
+    
+  </head>
+  
+  
+  <!--<body ng-controller="ProjectCtrl as proCtrl">-->
+  <body>
+  <!--<header>My Header</header>-->
+	<custom-header></custom-header>
+	
+	
+<div id="testheightcont">
+	<div class="homeContainer" ng-show="header.isSet(1)">
+			<home-tab></home-tab>
+	</div>
+
+	<div ng-show="header.isSet(3)">
+			<info-tab></info-tab>
+	</div>
+	
+	<div ng-show="header.isSet(2)">
+			<project-tabs></project-tabs>
+    </div>
+</div>	
+
+
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
+		<div id="linkedincontainermain">
+					<script src="//platform.linkedin.com/in.js" type="text/javascript"></script>
+					<script type="IN/MemberProfile" data-id="https://www.linkedin.com/pub/alexander-andersson/97/9a9/185" data-format="inline" data-related="false"></script>
+		</div>
+
+		
+		
+		
+
+		
+		
+		
+
+  </body>
+  <footer id="footer">
+  <div class="footerContent">
+	  <p><a href="" ng-click="header.setTab(3)">Contact </a>&copy; 1989-2015 Alexander Andersson</p>
+  </div>
+</footer>
+</html>

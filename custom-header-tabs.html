@@ -1,0 +1,32 @@
+<header>
+<ul class="nav nav-pills">
+			
+            <li ng-class="{ active:headerTabs.isSet(1) }">
+              <a href="" ng-click="headerTabs.setTab(1)">Homer</a>
+            </li>
+            <li ng-class="{ active:headerTabs.tab.isSet(2) }">
+              <a href="" ng-click="headerTabs.setTab(2)">Projects</a>
+            </li>
+            <li ng-class="{ active:headerTabs.isSet(3) }">
+              <a href="" ng-click="headerTabs.setTab(3)">Contact</a>
+            </li>
+          </ul>
+</header>
+<section>
+          <div ng-show="headerTabs.isSet(1)">
+			<h4>Tab1cont</h4>
+		  </div>
+          <div ng-show="headerTabs.isSet(2)">
+			<project-tabs></project-tabs>
+          </div>
+          <div ng-show="headerTabs.isSet(3)">
+          <p>To reach me, please use the contact information below:</p>
+		  <strong>Mailing Address:</strong>
+		  <p>Erling Skjalgssons Gate 34B</p>
+		  <p>0267 Oslo</p>
+		  <strong>Mobile:</strong>
+		  <p>+47 480 62 492</p>
+		  <strong>Email:</strong>
+		  <p><a href="mailto:alextommy89@gmail.com" target="_top">alextommy89@gmail.com</a></p>
+		  </div>
+</section>
