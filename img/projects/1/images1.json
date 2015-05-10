@@ -1,44 +1,32 @@
 [
     {
-        "title":"Altair",
-        "id":"ED02-0185-01",
-        "desc":"The GEMAL modeling language is built up of 7 basic modeling concepts; process(a), product(b), location(c), person(d), goal(e), organisation(f) and capability(g). These concepts had been outlined by professor John Krogstie in his language proposal for GEMAL. Their meanings and visual notations remained largely unchanged throughout my project.",
+        "title":"Gemal Concepts",
+        "id":"1.1",
+        "desc":"The GEMAL modeling language is built up of 7 basic modeling concepts (simply called 'things'); process (a), product (b), location (c), person (d), goal (e), organisation (f) and capability (g). These concepts had been outlined by professor John Krogstie in his language proposal for GEMAL. Their meanings and visual notations remained largely unchanged throughout my project.",
         "image":"gemal_concepts.png"
     },
+	    {
+        "title":"Gemal Metamodel",
+        "id":"1.2",
+        "desc":"Metamodel for the GEMAL modeling language, illustrating possible concepts and relationships between them. The model was made using the GEMAL implementation.",
+        "image":"gemal_metamodel.png"
+    },
     {
-        "title":"Altair",
-        "id":"ED03-0078-1",
+        "title":"Gemal Viewstyles",
+        "id":"1.3",
         "desc":"Visual notations of the implemented modeling language can be customised by choosing between the basic (left) and advanced (right) view-styles. The advanced view-style trades increased visual complexity, for more expressiveness; attributes including internal complexity, completeness, modality and state are displayed visually on modeling objects. ",
         "image":"paper_viewstyles.png"
     },
     {
-        "title":"Altair",
-        "id":"EC03-0154-3",
+        "title":"Gemal States",
+        "id":"1.4",
         "desc":"State space and state transitions of GEMAL's modeling concepts was one of many topics that was designed as a part of this project, partially based on the Bunge-Wand-Weber ontology and Frank Moody's principles for visual notations of conceptual modeling languages. The model in the picture was made using GEMAL notations and software.",
         "image":"gemal_states.png"
     },
     {
-        "title":"Altair",
-        "id":"ED05-0082-03",
-        "desc":"The long, slender wings of General Atomics Altair UAV are in evidence during a series of climatic and environmental monitoring missions for NOAA and NASA in the spring of 2005.",
-        "image":"altair4.jpg"
-    },
-    {
-        "title":"Altair",
-        "id":"EC05-0090-19",
-        "desc":"A satellite antenna, electro-optical/infrared and ocean color sensors (front) were among payloads installed on the Altair for the NOAA-NASA UAV flight demonstration.",
-        "image":"altair3.jpg"
-    },
-    {
-        "title":"Altair",
-        "id":"ED06-0208-3",
-        "desc":"Equipped with a pod-mounted infrared imaging sensor, the Altair UAS aided fire mapping efforts over wildfires in central and southern California in late 2006.",
-        "image":"altair2.jpg"
-    },
-    {
-        "title":"Altair",
-        "id":"ED06-0208-1",
-        "desc":"A high-tech infrared imaging sensor in its underbelly pod, the Altair unmanned aircraft flew repeated passes over the Esperanza fire to aid firefighting efforts.",
-        "image":"altair1.jpg"
+        "title":"Gemal Istar",
+        "id":"1.5",
+        "desc":"A GEMAL model (left) that was made based on an I* model during one of the many case studies of the project. The figure to the right shows how a GEMAL object may contain several composite objects - here illustrated by an 'Organising committe' that, among other things, owns a 'Website' product and a 'Handle payments' process.",
+        "image":"gemal_istar.png"
     }
 ]
