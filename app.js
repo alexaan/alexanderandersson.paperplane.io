@@ -50,7 +50,8 @@ app.factory('myService' ,function(){
 //console.log('testenns', 'er'); 
 app.controller('GalleryController', ['$scope', 'DataSource', 'myService', 'htab', function($scope, DataSource, myService, htab){
     //var IMAGE_WIDTH = 405;
-	var IMAGE_WIDTH = 66.15;
+	//var IMAGE_WIDTH = 66.15;
+	var IMAGE_WIDTH = 70.75;
 	var PROJECT_COUNT = 3;
     //$scope.IMAGE_LOCATION = "http://rabidgadfly.com/assets/angular/gallery1/";
 	$scope.IMAGE_LOCATION = "/img/projects/";
