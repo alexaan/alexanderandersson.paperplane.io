@@ -75,7 +75,7 @@
 					<ul id="fullscroller" class="fullsizelist" ng-style="listposition" >
 					
 						<li class="largecontainer" ng-repeat="image in galleryData2">
-							<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+2+'/'+image.image}}" ng-swipe-right="showPrev()" ng-swipe-left="showNext()">
+							<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+2+'/'+image.image}}" ng-swipe-right="myNavigate(2, 'prev')" ng-swipe-left="myNavigate(2, 'next')">
 						</li>
 					</ul>
 					<a class="arrow prev" href="" ng-click="myNavigate(2, 'prev')"></a>
