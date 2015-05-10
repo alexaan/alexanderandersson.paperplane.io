@@ -2,4 +2,4 @@
 
 Complete source code for Alexander Andersson's personal webpage.
 
-Running instance at http://alexanderandersson.paperplane.io/
+Running live at http://alexanderandersson.paperplane.io/
