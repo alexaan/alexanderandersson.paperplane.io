@@ -12,12 +12,8 @@ html{
 	text-align: center;
 }
 
-#testcont{
-	height:500px;
-}
-
 #bodyTabsContainer{
-	min-height:500px;
+	min-height:60vh;
 }
 
 .arrow {
