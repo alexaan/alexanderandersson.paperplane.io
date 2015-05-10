@@ -1,39 +1,31 @@
-<div>
-<header id="fixheader">
-<div id="siteHeaderContainer">
-<h1 id="siteHeader">
-<a id="homelink" href="" ng-click="header.setTab(1)">Alexander Andersson</a>
-<em id="siteheaderEmWebsite">- Personal website</em>
-</h1>
+<header id="siteHeadContainer">
+	<div>
+		<h1 id="siteHeader">
+			<a id="homelink" href="" ng-click="htctrl.setTab(1)">Alexander Andersson</a>
+			<em id="siteheaderEmWebsite"><a id="homelink" href="" ng-click="htctrl.setTab(1)"> - Personal Website</a></em>
+		</h1>
+	</div>
+	<div id="siteheaderEmWebsiteContainer">
 
-<div id="siteheaderEmWebsiteContainer">
+	</div>
+	<div id="siteheaderEmContainer">
+		<em id="siteheaderEm">MSc Computer Science (NTNU), BSc Computer Science (HIALS)</em>
+	</div>
 
-</div>
-<div id="siteheaderEmContainer">
-<em id="siteheaderEm">MSc Computer Science (NTNU), BSc Computer Science (HIALS)</em>
-</div>
-
-<!--<em id="header-pull-right" class ="pull-right">Personal website</em>-->
-
-<ul class="nav nav-pills">
-			
-            <li ng-class="{ active:header.isSet(1) }">
-              <a href="" ng-click="header.setTab(1)">Home</a>
-            </li>
-            <li ng-class="{ active:header.isSet(2) }">
-              <a href="" ng-click="header.setTab(2)">Projects</a>
-            </li>
-            <li ng-class="{ active:header.isSet(3) }">
-              <a href="" ng-click="header.setTab(3)">Contact</a>
-            </li>
-          </ul>
-
-
-
-
+	<ul class="nav nav-pills">	
+		<li ng-class="{ active:htctrl.isSet(1) }">
+		  <a href="" ng-click="htctrl.setTab(1)">Home</a>
+		</li>
+		<li ng-class="{ active:htctrl.isSet(2) }">
+		  <a href="" ng-click="htctrl.setTab(2)">Projects</a>
+		</li>
+		<li ng-class="{ active:htctrl.isSet(3) }">
+		  <a href="" ng-click="htctrl.setTab(3)">Contact</a>
+		</li>
+	</ul>
+	
 </header>
 
 
-<!-- SECTION TATT HERFRA -->
-			</div>
+
 
