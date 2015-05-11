@@ -1,4 +1,4 @@
-var app = angular.module('galleryApp',['ngCookies']);//'ngAnimate', 'ngTouch'
+var app = angular.module('galleryApp',['ngCookies', 'ngAnimate']);//'ngAnimate', 'ngTouch'
 
 app.factory('DataSource', ['$http',function($http){
        return {
@@ -58,6 +58,7 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 		Function for navigating left or right when arrows are clicked in the Image Gallery.
 	**/
 	$scope.myNavigate = function(galleryid, navAction) {
+	console.log('entered mynavigate');
 	
 		var tempGalleryData = [];
 		var tempSelectedData = [];

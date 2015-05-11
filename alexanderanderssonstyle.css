@@ -105,23 +105,35 @@ html{
 	color:white!important;
 }
 
-.projectTabs a {
+	.projectTabs a {
 		background-color: #669999!important;
 	}
 	
-.projectTabs a:hover, .projectTabs a:active  {
+	.projectTabs a:active  {
+		background-color: red!important;
+	}
+	
+.projectTabs a:hover  {
 		background-color: #0066FF!important;
 	}
 
+
+	
+
+li.hover a {
+	color:#0066FF!important;
+}
 li.active a {
-	background:black!important; 
 	color:#0066FF!important;
 }
 
+
+/*
 .projectTabs li.active a{
-	background-color: #0066FF!important; 
-	color:white!important;
+	background-color: #669999!important; 
+	color:blue!important;
 }
+*/
 
 #projectListLabel{
 	width:50vw;
@@ -219,6 +231,8 @@ h4{
 
 	margin: 0 auto;
 	height:48vh;
+	width:auto;
+	max-width:70.75vw;
 	display: inline-block;
 }
 
@@ -227,8 +241,10 @@ h4{
     float:left;
 	width:80%;
 	height:50vh;
-	border-radius:0.5%;
-	border-color: #ff0000 #0000ff;
+	
+	border-style: solid;
+    border-width: 0.1vw;
+	border-color:gray;
 	margin:0 0.1% 0.1% 0;
     padding:0.1%;
 }
@@ -274,7 +290,9 @@ h4{
     background-color:#fff;
 	width: 100%;
 	padding:0.1%;
-    border-radius:0.5%;
+	border-style: solid;
+    border-width: 0.1vw;
+	border-color:gray;
     float:left;
 }
 
@@ -293,7 +311,9 @@ h4{
     background-color:#fff;
 	margin:0 0 0 0;
     height:50vh;
-    border-radius:0.1%;
+    border-style: solid;
+    border-width: 0.1vw;
+	border-color:gray;
 	padding:1%;
     float:left;
 	width:19.9%;
@@ -476,8 +496,9 @@ footer .footerContent {
 		background-color:#fff;
 		
 		height:39vh;
-		border-radius:0.1%;
-		border-color: #ff0000 #0000ff;
+		border-style: solid;
+		border-width: 0.1vw;
+		border-color:gray;
 		margin:0 5% 0.5% 5%;
 		width:90%;
 		padding:0.1%;
@@ -488,7 +509,9 @@ footer .footerContent {
 		background-color:#fff;
 		margin:0 0 0.5% 0;
 		height:auto;
-		border-radius:0.5%;
+		border-style: solid;
+		border-width: 0.1vw;
+		border-color:gray;
 		padding:0.5%;
 		margin:0 0.5% 0.5% 0;
 		float:left;
