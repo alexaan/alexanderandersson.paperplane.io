@@ -1,0 +1,31 @@
+<header id="siteHeadContainer">
+	<div>
+		<h1 id="siteHeader">
+			<a id="homelink" href="index" ng-click="htctrl.setTab(1)">Alexander Andersson</a><!--ng-click="htctrl.setTab(1)"-->
+			<em id="siteheaderEmWebsite"><a id="homelink" href="index"ng-click="htctrl.setTab(1)"> - Personal Website</a></em><!--ng-click="htctrl.setTab(1)"-->
+		</h1>
+	</div>
+	<div id="siteheaderEmWebsiteContainer">
+
+	</div>
+	<div id="siteheaderEmContainer">
+		<em id="siteheaderEm">MSc Computer Science (NTNU), BSc Computer Science (HIALS)</em>
+	</div>
+
+	<ul class="nav nav-pills">	
+		<li ng-class="{ active:htctrl.isSet(1) }"><!--ng-class="{ active:htctrl.isSet(1) }"-->
+		  <a ng-click="htctrl.setTab(1)" href="index">Home</a><!--ng-click="htctrl.setTab(1)"-->
+		</li>
+		<li ng-class="{ active:htctrl.isSet(2) }"><!--ng-class="{ active:htctrl.isSet(2) }"-->
+		  <a href="projects" ng-click="htctrl.setTab(2)">Projects</a><!--ng-click="htctrl.setTab(2)"-->
+		</li>
+		<li ng-class="{ active:htctrl.isSet(3) }"><!--ng-class="{ active:htctrl.isSet(3) }"-->
+		  <a href="contact" ng-click="htctrl.setTab(3)">Contact</a><!--ng-click="htctrl.setTab(3)"-->
+		</li>
+	</ul>
+	
+</header>
+
+
+
+

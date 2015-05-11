@@ -19,14 +19,7 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 	$scope.IMAGE_INFO_LOCATION = "/img/projects/";
 	
 	
-	/**
-		Retrieve image data from json files and store it in scope variables 
-	**/
-    DataSource.get("images.json",function(data) {
-        $scope.galleryData = data;
-        $scope.selected = data[0];
-    });
-	
+		//Retrieve image data from json files and store it in scope variables 
 	$scope.galleryDataArray = [];
 	$scope.selectedDataArray = [];
 
@@ -107,6 +100,7 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 
 /**
 	Controller for Project tabs. Used for checking/setting active project tab. Values are stored in cookies to maintain tab state on page refresh.
+	
 **/
 app.controller('ProjectTabCtrl', ['$scope', '$cookieStore', function ProjectTabCtrl($scope, $cookieStore) {
 	$scope.projectTab = 1;
@@ -131,53 +125,57 @@ app.controller('ProjectTabCtrl', ['$scope', '$cookieStore', function ProjectTabC
 	};
 }]);
 
+
 /**
 	Controller for Header tabs. Used for checking/setting active header tab. Values are stored in cookies to maintain tab state on page refresh.
+	**CURRENTLY NOT USED**
 **/
 app.controller('HeadTabCtrl', ['$scope', '$cookieStore', function HeadTabCtrl($scope, $cookieStore){
-		$scope.headTab = 1;
 		if (typeof $cookieStore.get('headTab') === 'undefined') {
 			$cookieStore.put('headTab', 1);
-			$scope.headTab = 1;
-		}
-		else{
-			$scope.headTab = $cookieStore.get('headTab');
 		}
 		this.isSet=function(checkTab){
-		var tempp = ($scope.headTab === checkTab);
-			return $scope.headTab === checkTab;
+			var retParam = $cookieStore.get('headTab');
+			console.log('checking '+retParam+ ' against '+checkTab);
+			return retParam === checkTab;
 		};
 		this.setTab = function(activeTab){
-			$scope.headTab = activeTab;
 			$cookieStore.put('headTab', activeTab);
 		}
 }]);
 
-app.directive('customHeader', function(){
+app.directive('pageHeader', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'custom-header.html'
+		templateUrl: 'page-header.html'
 		};
 });
 
-app.directive('infoTab', function(){
+app.directive('contactTab', function(){
 return {
 
 	restrict: 'E',
-	templateUrl: 'info-tab.html'
+	templateUrl: '/content-tabs/contact-tab.html'
 	};
 });
 
 app.directive('homeTab', function(){
 return {
 	restrict: 'E',
-	templateUrl: 'home-tab.html'
+	templateUrl: '/content-tabs/home-tab.html'
 };
 });
 
-app.directive('projectTabs', function(){
+app.directive('projectTab', function(){
 	return {
 		restrict: 'E',
-		templateUrl: 'project-tabs.html',
+		templateUrl: '/content-tabs/project-tab.html',
+	};
+});
+
+app.directive('pageFooter', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'page-footer.html',
 	};
 });
