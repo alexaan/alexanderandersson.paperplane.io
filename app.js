@@ -1,10 +1,24 @@
-var app = angular.module('galleryApp',['ngCookies', 'ngAnimate']);//'ngAnimate', 'ngTouch'
+var app = angular.module('galleryApp',['ngCookies', 'ngAnimate', 'ngRoute']);//'ngAnimate', 'ngTouch'
 
-app.config(['$locationProvider', function AppConfig($locationProvider){
-
-	$locationProvider.html5Mode(true);
+app.config(['$locationProvider', '$routeProvider', '$provide', function AppConfig($locationProvider, $routeProvider, $provide){
+	
+    //$provide.decorator('$sniffer', function($delegate) {
+	  //$delegate.history = false;
+	  //return $delegate;
+	//});
+	//$routeProvider
+	  //.when('/contact', {
+		//templateUrl: 'contact.html',
+	  //});
+	$locationProvider
+	  .html5Mode(true)
+	  .hashPrefix('!');
+	
 }]);
 
+app.controller('DummyCtrl', function(){ 
+	DataSource.get("",function(data) {});	
+});
 
 app.factory('DataSource', ['$http',function($http){
        return {

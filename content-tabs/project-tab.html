@@ -1,7 +1,11 @@
-<div class="projectTabs" ng-controller="ProjectTabCtrl as hc">
+<style>
+	.ng-hide {display: none!important; color:red!important;}
+</style>
+
+<div class="projectTabs" ng-controller="ProjectTabCtrl as hc" ng-cloak>
 	
 	
-	<div ng-show="pid!='1' && pid!='2'">
+	<div ng-if="pid!='1' && pid!='2'">
 		<div id="projectListLabel">Select a project:</div>
 		<ul id="projectList" class="nav nav-pills">
 			<li class="projectListElement" > <!-- ng-class="{ active:hc.isSet(1) }" -->
@@ -18,7 +22,7 @@
    
    
    
-	<div ng-show="pid=='1'">
+	<div ng-if="pid=='1'">
 	
 	<h4 class="projectInfoHeader">Master Project: The Molecular Modeling Language GEMAL</h4>	
 	<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> Troux Architect (Metis), C++</p>
@@ -81,8 +85,7 @@
 	
 	</div>
    
-	<!--<div ng-show="hc.isSet(2)">-->
-	<div ng-show="pid == '2'">
+	<div ng-if="pid == '2'">
 		<h4 class="projectInfoHeader">Specialisation Project: Augmented Reality and Serious Games for Learning</h4>
 		<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> C#, PHP, MySQL, Unity 3D, Vuforia SDK</p>
 		
