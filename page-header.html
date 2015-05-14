@@ -1,8 +1,10 @@
-<header id="siteHeadContainer">
+<header id="siteHeadContainer" ng-controller="ProjectTabCtrl as hc">
+	
+	<!--
 	<div>
 		<h1 id="siteHeader">
-			<a id="homelink" href="index.html" ng-click="htctrl.setTab(1)">Alexander Andersson</a><!--ng-click="htctrl.setTab(1)"-->
-			<em id="siteheaderEmWebsite"><a id="homelink" href="index.html"ng-click="htctrl.setTab(1)"> - Personal Website</a></em><!--ng-click="htctrl.setTab(1)"-->
+			<a id="homelink" href="index.html" ng-click="htctrl.setTab(1)">Alexander Andersson</a>
+			<em id="siteheaderEmWebsite"><a id="homelink" href="index.html"ng-click="htctrl.setTab(1)"> - Personal Website</a></em>
 		</h1>
 	</div>
 	<div id="siteheaderEmWebsiteContainer">
@@ -11,21 +13,54 @@
 	<div id="siteheaderEmContainer">
 		<em id="siteheaderEm">MSc Computer Science (NTNU), BSc Computer Science (HIALS)</em>
 	</div>
-
+	-->
+	
+	<!--
 	<ul class="nav nav-pills">	
-		<li ng-class="{ active:htctrl.isSet(1) }"><!--ng-class="{ active:htctrl.isSet(1) }"-->
-		  <a ng-click="htctrl.setTab(1)" href="index.html">Home</a><!--ng-click="htctrl.setTab(1)"-->
+		  <a ng-click="htctrl.setTab(1)" href="index.html">Home</a>
 		</li>
-		<li ng-class="{ active:htctrl.isSet(2) }"><!--ng-class="{ active:htctrl.isSet(2) }"-->
-		  <a href="projects.html" ng-click="htctrl.setTab(2)">Projects</a><!--ng-click="htctrl.setTab(2)"-->
+		<li ng-class="{ active:htctrl.isSet(2) }">
+		  <a href="projects.html" ng-click="htctrl.setTab(2)">Projects</a>
 		</li>
-		<li ng-class="{ active:htctrl.isSet(3) }"><!--ng-class="{ active:htctrl.isSet(3) }"-->
-		  <a href="contact.html" ng-click="htctrl.setTab(3)">Contact</a><!--ng-click="htctrl.setTab(3)"-->
+		<li ng-class="{ active:htctrl.isSet(3) }">
+		  <a href="contact.html" ng-click="htctrl.setTab(3)">Contact</a>
 		</li>
 	</ul>
+	-->
+	
+	
+	<div class="container">
+				<nav role="navigation" class="navbar navbar-inverse">
+					<!-- Brand and toggle get grouped for better mobile display -->
+					<div class="navbar-header">
+						<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a href="index.html" ng-click="htctrl.setTab(1)" class="navbar-brand" target="_self">Alexander Andersson - Personal website</a>
+					</div>
+					<!-- Collection of nav links, forms, and other content for toggling -->
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+						<ul class="nav navbar-nav">
+							<li ng-class="{ active:htctrl.isSet('/index.html') || htctrl.isSet('/') }" ng-click="htctrl.setTab(1)">
+								<a href="index.html" target="_self">Home</a>
+							</li>
+							<li class="dropdown" ng-class="{ active:htctrl.isSet('/projects.html') }">
+								<a data-toggle="dropdown" class="dropdown-toggle" href="">Projects <b class="caret"></b></a>
+								<ul role="menu" class="dropdown-menu" ng-class="{ active:hc.isSet(1) }">
+									<li class="dropdown-item"><a href="projects.html?pid=1" target="_self">Master Project</a></li>
+									<li class="dropdown-item"><a href="projects.html?pid=2" target="_self" ng-click="">Specialisation Project</a></li>
+									<li class="divider"></li>
+									<li class="dropdown-item"><a href="projects.html" target="_self">Project List</a></li>
+								</ul>
+							</li>
+							<li ng-class="{ active:htctrl.isSet('/contact.html') }" ng-click="htctrl.setTab(3)"><a href="contact.html" target="_self">Contact</a></li>
+						</ul>
+					</div>
+				</nav>
+			</div>
 	
 </header>
-
-
-
-
+</header>

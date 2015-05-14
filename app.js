@@ -1,5 +1,11 @@
 var app = angular.module('galleryApp',['ngCookies', 'ngAnimate']);//'ngAnimate', 'ngTouch'
 
+app.config(['$locationProvider', function AppConfig($locationProvider){
+
+	$locationProvider.html5Mode(true);
+}]);
+
+
 app.factory('DataSource', ['$http',function($http){
        return {
            get: function(fileName,callback){
@@ -11,7 +17,29 @@ app.factory('DataSource', ['$http',function($http){
        };
     }]);
 	
- 
+	
+app.service('sharedProperties', function() {
+	var pid = "";  //project id
+    return {
+		getPid: function() {
+			return pid;
+		},
+		setPid: function(value){
+			pid = value;
+		}
+    }
+});
+		
+/**
+Temp solution for making sure that header tabs are updated properly TODO: replace with something better.
+**/
+app.controller('TempActiveHeaderItemCtrl', ['$scope', 'DataSource', function($scope, DataSource){ 
+	DataSource.get("",function(data) {});	
+}]);
+
+/**
+	Controller for retrieving and setting data for the image gallery from .json files + TODO: some outdated functions 
+**/
 app.controller('GalleryController', ['$scope', 'DataSource', function($scope, DataSource){
 	var IMAGE_WIDTH = 70.75;
 	var PROJECT_COUNT = 2;
@@ -19,7 +47,7 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 	$scope.IMAGE_INFO_LOCATION = "/img/projects/";
 	
 	
-		//Retrieve image data from json files and store it in scope variables 
+	//Retrieve image data from json files and store it in scope variables 
 	$scope.galleryDataArray = [];
 	$scope.selectedDataArray = [];
 
@@ -34,24 +62,18 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 	});
     
 	
-	/**
-		Function for Scroll to appropriate position based on image index and width
-	**/
+	//Function for Scroll to appropriate position based on image index and width 
+	//TODO: currently not used
     $scope.scrollTo = function(image,ind) {
         $scope.listposition = {left:(IMAGE_WIDTH * ind * -1) + "vw"};
         $scope.selected = image;
 		$scope.selectedFordypning = image;
 		$scope.selectedData = $scope.selectedData2 = $scope.selectedData3 = image; 
-		
-		
-		
     };
 	
-	/**
-		Function for navigating left or right when arrows are clicked in the Image Gallery.
-	**/
+	//Function for navigating left or right when arrows are clicked in the Image Gallery.
+	//TODO: currently not used
 	$scope.myNavigate = function(galleryid, navAction) {
-	console.log('entered mynavigate');
 	
 		var tempGalleryData = [];
 		var tempSelectedData = [];
@@ -72,8 +94,6 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 				break;
 			}
 		}
-
-		
 		if(navAction=="next"){
 			if(i >= tempGalleryData.length-1){
 				$scope.scrollTo(tempGalleryData[0],(0));	
@@ -92,18 +112,16 @@ app.controller('GalleryController', ['$scope', 'DataSource', function($scope, Da
 			}
 		}	
 	}
-
-
-
 }]);
 
 
 /**
 	Controller for Project tabs. Used for checking/setting active project tab. Values are stored in cookies to maintain tab state on page refresh.
-	
+	//TODO: currently not used
 **/
-app.controller('ProjectTabCtrl', ['$scope', '$cookieStore', function ProjectTabCtrl($scope, $cookieStore) {
+app.controller('ProjectTabCtrl', ['$scope', '$cookieStore', 'sharedProperties', '$location', function ProjectTabCtrl($scope, $cookieStore, sharedProperties, $location) {
 	$scope.projectTab = 1;
+	
 	if (typeof $cookieStore.get('projectTab') === 'undefined') 
 	{
 			$cookieStore.put('projectTab', 1);
@@ -117,31 +135,55 @@ app.controller('ProjectTabCtrl', ['$scope', '$cookieStore', function ProjectTabC
 	this.isSet = function(checkTab)
 	{
 		return $scope.projectTab === checkTab;
+		
 	};
 	this.setTab = function(activeTab)
 	{
 		$scope.projectTab = activeTab;
 		$cookieStore.put('projectTab', activeTab);
 	};
+	$scope.isCurrentSlideIndex = function (index) {
+            return 1 === index;
+        };
 }]);
 
 
 /**
 	Controller for Header tabs. Used for checking/setting active header tab. Values are stored in cookies to maintain tab state on page refresh.
-	**CURRENTLY NOT USED**
 **/
-app.controller('HeadTabCtrl', ['$scope', '$cookieStore', function HeadTabCtrl($scope, $cookieStore){
+app.controller('HeadTabCtrl', ['$scope', '$cookieStore', '$location', 'sharedProperties', function HeadTabCtrl($scope, $cookieStore, $location, sharedProperties){
+		
+		//set pid (project id) - will be used to determine which project to show in projects.html
+		$scope.pid="";
+		if (typeof $location.search().pid != 'undefined') 
+		{
+			$scope.pid = $location.search().pid;
+			sharedProperties.setPid($scope.pid);
+		}
+		$scope.pid = sharedProperties.getPid();
+		//
+		
 		if (typeof $cookieStore.get('headTab') === 'undefined') {
 			$cookieStore.put('headTab', 1);
 		}
-		this.isSet=function(checkTab){
+		$scope.isSet=function(checkTab){
+			if (typeof $cookieStore.get('headTab') === 'undefined') {
+				$cookieStore.put('headTab', 1);
+			}
 			var retParam = $cookieStore.get('headTab');
-			console.log('checking '+retParam+ ' against '+checkTab);
 			return retParam === checkTab;
 		};
-		this.setTab = function(activeTab){
+		$scope.setTab = function(activeTab){
 			$cookieStore.put('headTab', activeTab);
 		}
+		
+		this.isSet = function(item) {
+		  if (item == $location.path()) {
+			
+			return true;
+		  }  
+		  return false;
+		};
 }]);
 
 app.directive('pageHeader', function(){
@@ -151,18 +193,25 @@ app.directive('pageHeader', function(){
 		};
 });
 
+app.directive('pageHeaderBootstrap', function(){
+	return {
+		restrict: 'E',
+		templateUrl: 'page-header-bootstrap.html'
+		};
+});
+
 app.directive('contactTab', function(){
 return {
 
 	restrict: 'E',
-	templateUrl: '/content-tabs/contact-tab.html'
+	templateUrl: '/content-tabs/contact-tab.html',
 	};
 });
 
 app.directive('homeTab', function(){
 return {
 	restrict: 'E',
-	templateUrl: '/content-tabs/home-tab.html'
+	templateUrl: '/content-tabs/home-tab.html',
 };
 });
 

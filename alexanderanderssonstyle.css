@@ -1,5 +1,5 @@
 html{
-	background-color:black;
+	background-color:#74AFAD;
 }
 
 .projectInfoHeader {
@@ -25,7 +25,7 @@ html{
     position: absolute;
     top: 50%;
     width: 7vw;
-    z-index: 5;
+    z-index: 5; 
 }
 .arrow.prev {
    background-image: url("img/arrow-left.png");
@@ -88,10 +88,17 @@ html{
 	cursor:default;
 }
  
-.nav a {
+.nav > a, .projectListElement > a {
+	/*
 	text-decoration: none!important;
+	background-color:gray!important;
+	*/
 	color:#FFFFFF!important;
-	background-color:black!important;
+	
+}
+
+.dropdown-item  > a:hover{
+	color:#74AFAD!important;
 }
 
 .nav a:active
@@ -100,20 +107,20 @@ html{
 	color:#0066FF!important;
 }
 
-.nav a:hover {
+.navbar-nav > li > a:hover {
 	background-color:#0066FF!important;
 	color:white!important;
 }
 
-	.projectTabs a {
+	.projectListElement a {
 		background-color: #669999!important;
 	}
 	
-	.projectTabs a:active  {
+	.projectListElement a:active  {
 		background-color: red!important;
 	}
 	
-.projectTabs a:hover  {
+	.projectListElement a:hover  {
 		background-color: #0066FF!important;
 	}
 
@@ -124,7 +131,7 @@ li.hover a {
 	color:#0066FF!important;
 }
 li.active a {
-	color:#0066FF!important;
+	color:#0066FF;
 }
 
 
@@ -163,40 +170,48 @@ body {
 	font-size: 10pt;
 }
 
-li {
+.nav > li {
 	list-style:none;
 	display:inline-block;
 }
 
-.thumbswrapper li {
+.thumbswrapper > li {
 	list-style:none;
 	display:inline;
 }
 
-ul{
+.navbarCollapse > ul, .projectTabs > ul{
 	padding:0;
 	margin:0;
 	white-space:nowrap;
 }
 
-
+/*
 .nav{
 	clear: left;
+}
+*/
+
+.navbar {
+	margin-top:20px;
 }
 
 header, h1{
 	margin: 0;	
 }
+
+page-header > header{
+	background-color:#74AFAD;
+	color: white;
+	min-height: 30px;
+}
+
 #siteHeadContainer{
 	margin:0;
 	width:100%;
 	clear:both;
 }
-header{
-	background-color:#000000;
-	color: white;
-	min-height: 30px;
-}
+
 
 h4{
 	margin:0;
@@ -383,7 +398,7 @@ footer {
 	height:20vh;
 	position:relative;
 	bottom:0;
-	background-color:black;
+	background-color:#74AFAD;
 	color:white;
 	width:100%;
 	
@@ -396,8 +411,87 @@ footer .footerContent {
 	text-align: left;
 }
 
+/*********************************************************************************KARUSELL**********************************************************************************/
+ h2{
+    margin: 0;     
+    color: #666;
+    padding-top: 90px;
+    font-size: 52px;
+    font-family: "trebuchet ms", sans-serif;    
+}
+.carousel-container .item{
+    background: #333;    
+    text-align: center;
+	width:100%;
+	height:100%;
+}
+
+.carousel-container .item img {
+	width:auto;
+	max-height:100%!important;
+
+	margin-right: auto;
+	margin-left:auto;
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -50%);
+}
+
+.carousel-container .item .imgContainer{
+position:relative;
+height:70%;
+}
+
+.carousel-container{
+	margin-left:5%;
+	margin-right:5%;
+	margin-bottom:10px;
+	display:block;
+	width:90%;
+	height:500px;
+	float:left;
+}
+
+.carousel{
+height:500px;
+}
+
+#myCarouselInfoContainer{
+margin: 0 0.5% 0 0!important;
+padding:0.5%;
+height:30%;
+background-color:#74AFAD;
+color:black;
+opacity: 0.8;
+}
+
+.carousel-control{
+height:100%;
+}
+
+.carousel-inner{
+height:100%;
+}
+
+.carousel-indicators {
+	
+	bottom:0!important;
+	margin-bottom:0!important;
+}
+
+
+
 /*********************************************************************************MEDIA QUERY**********************************************************************************/
 @media only screen and (max-width : 640px) {
+
+	.carousel-container{
+		height:400px;
+	}
+
+	.carousel{
+		height:400px;
+	}
 
 	.homeInfo
 	{
@@ -435,7 +529,7 @@ footer .footerContent {
 		display:inline-block;
 	}
 
-	ul{ 
+	.navbarCollapse > ul{ 
 		position: relative;
 		display:inline-block;
 		width: 100%;
@@ -444,7 +538,7 @@ footer .footerContent {
 		white-space: nowrap;
 	}
 
-	header li, .nav li {
+	header > li, .nav > li {
 		text-align: center;
 		width: 100%;
 		padding: 0 0;
@@ -453,7 +547,7 @@ footer .footerContent {
 		white-space: nowrap;
 
 	}
-	.projectTabs li {
+	.projectTabs > li {
 		text-align: left;
 		border:none;
 		margin-left:0px!important;
@@ -461,10 +555,11 @@ footer .footerContent {
 		color: #669999!important;
 	}
 	
-	.projectTabs a {
+	.projectListElement a {
 		background-color: #669999!important;
 		border-radius:0px;
 	}
+	
 	
 	
 	section {

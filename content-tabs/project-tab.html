@@ -1,54 +1,71 @@
-<section class="projectTabs" ng-controller="ProjectTabCtrl as hc">
-	<div id="projectListLabel">Select a project:</div>
-	<ul id="projectList" class="nav nav-pills">
-		<li class="projectListElement" ng-class="{ active:hc.isSet(1) }">
-			<a href="" ng-click="hc.setTab(1)">Master Project</a>
-		</li>
-		<li class="projectListElement" ng-class="{ active:hc.isSet(2) }">
-			<a href="" ng-click="hc.setTab(2)">Specialisation Project</a>
-		</li>
-		<li class="projectListElement" id="project-coming-soon" ng-class="{ active:hc.isSet(3) }">
-			<a href="" ng-click="">Coming soon</a>
-		</li>
-	</ul>
-    <div class ="bgpar" ng-show="hc.isSet(1)">
-		  
-		<h4 class="projectInfoHeader">Master Project: The Molecular Modeling Language GEMAL</h4>	
-		<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> Troux Architect (Metis), C++</p>
-		<div class="bg" ng-controller="GalleryController">
-		
-			<div class="mainimageshell">
-				<div class="viewwindow">
-					<ul id="fullscroller" class="fullsizelist" ng-style="listposition" >
-						<li class="largecontainer" ng-repeat="image in galleryData1">
-							<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+1+'/'+image.image}}" />
-						</li>
-					</ul>
+<div class="projectTabs" ng-controller="ProjectTabCtrl as hc">
+	
+	
+	<div ng-show="pid!='1' && pid!='2'">
+		<div id="projectListLabel">Select a project:</div>
+		<ul id="projectList" class="nav nav-pills">
+			<li class="projectListElement" > <!-- ng-class="{ active:hc.isSet(1) }" -->
+				<a href="projects.html?pid=1" target="_self">Master Project</a> <!-- ng-click="hc.setTab(1)" -->
+			</li>
+			<li class="projectListElement">
+				<a href="projects.html?pid=2" target="_self">Specialisation Project</a>
+			</li>
+			<li class="projectListElement" id="project-coming-soon" ng-class="">
+				<a href="" ng-click="">Coming soon</a>
+			</li>
+		</ul>
+	</div>
+   
+   
+   
+	<div ng-show="pid=='1'">
+	
+	<h4 class="projectInfoHeader">Master Project: The Molecular Modeling Language GEMAL</h4>	
+	<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> Troux Architect (Metis), C++</p>
+	
+	<div class="carousel-container" ng-controller="GalleryController">
+				
+					<div id="projectCarousel2" class="carousel slide" data-interval="5000" data-ride="carousel">
 					
-					<a class="arrow prev" href="" ng-click="myNavigate(1, 'prev')"></a>
-					<a class="arrow next" href="" ng-click="myNavigate(1, 'next')"></a>
 					
-				</div>
-			</div>
-			
-			<div class="captionshell">
-				<p class="caption">{{selectedData.desc}}</p>
-			</div>
-			
-			<div class="thumbsshell">
-				<div class="thumbswrapper">
-					<ul>
-						<li ng-repeat="image in galleryData1">
-							<div class="thumbwrapper">
-								<a ng-href="" ng-click="scrollTo(image,$index)">
-									<img class="thumbnail" ng-src="{{IMAGE_LOCATION+1+'/'+image.image}}" />
-								</a>
+					
+						<!-- Carousel indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#projectCarousel2" data-slide-to="0" class="active ng-scope"></li>
+							<li data-target="#projectCarousel2" data-slide-to"$index" ng-repeat="image in galleryData1" ng-if="$index > 0"></li>
+							<li data-target="#projectCarousel2" data-slide-to"$index" ng-repeat="image in galleryData1" ng-if="$index > 0"></li>
+						</ol>   
+						
+
+					   <!-- Carousel items -->
+						<div class="carousel-inner">
+							<div class="item active">
+									<div class="imgContainer">
+										<img ng-src="{{ IMAGE_LOCATION+1+'/'+galleryData1[0].image }}" class="img-responsive">
+									</div>
+									<div id="myCarouselInfoContainer"><p>{{galleryData1[0].desc}}</p></div>
 							</div>
-						</li>
-					</ul>
-				</div>
-			</div>		
+							<div class="item" ng-repeat="image in galleryData1" ng-if="$index > 0">
+								<div class="imgContainer">
+									<img ng-src="{{ IMAGE_LOCATION+1+'/'+image.image }}" class="img-responsive">
+								</div>
+								<div id="myCarouselInfoContainer"><p>{{image.desc}}</p></div>
+							</div>
+							
+						</div>
+						<!-- Carousel nav -->
+						<a class="carousel-control left" href="#projectCarousel2" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="carousel-control right" href="#projectCarousel2" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					
+					</div>
+					
+					
 		</div>
+		
 		<div class="projectInfoContainer">
 			<p class ="projectInfo">Traditional modelling languages focus on modeling according to a specific modeling perspective,
 			e.g. being primarily process-oriented or object-oriented. Even if newer languages such as
@@ -61,45 +78,56 @@
 			through case studies and empirical evaluation techniques.</p>
 			<p class="projectInfo">Results of case studies, surveys and expert evaluations based on the implemented prototype indicate that GEMAL's apprach can be beneficial in many contexts, but that it also comes with tradeoffs. While a GEMAL model can avoid restrictions that come with adhering to a specific modeling perspective, the more general notation means that model interpretation can vary greatly from person to person.</p>
 		</div>
+	
 	</div>
-	<div ng-show="hc.isSet(2)">
-
+   
+	<!--<div ng-show="hc.isSet(2)">-->
+	<div ng-show="pid == '2'">
 		<h4 class="projectInfoHeader">Specialisation Project: Augmented Reality and Serious Games for Learning</h4>
 		<p class="projectInfoTechnologies"><strong>Main technologies used:</strong> C#, PHP, MySQL, Unity 3D, Vuforia SDK</p>
-
-		<div class="bg" ng-controller="GalleryController">
 		
-			<div class="mainimageshell">
-				<div class="viewwindow">
+		<div class="carousel-container" ng-controller="GalleryController">
 				
-					<ul id="fullscroller" class="fullsizelist" ng-style="listposition" >
-						<li class="largecontainer" ng-repeat="image in galleryData2" ng-swipe-right="myNavigate(2, 'prev')" ng-swipe-left="myNavigate(2, 'next')">
-							<img id="fullsize" class="large" ng-src="{{IMAGE_LOCATION+2+'/'+image.image}}" ng-swipe-right="myNavigate(2, 'prev')" ng-swipe-left="myNavigate(2, 'next')">
-						</li>
-					</ul>
-					<a class="arrow prev" href="" ng-click="myNavigate(2, 'prev')"></a>
-					<a class="arrow next" href="" ng-click="myNavigate(2, 'next')"></a>
-				</div>	
-			</div>
-			
-			<div class="captionshell">
-				<p class="caption">{{selectedData2.desc}}</p>
-			</div>
+					<div id="projectCarousel1" class="carousel slide" data-interval="5000" data-ride="carousel">
+					
+					
+					
+						<!-- Carousel indicators -->
+						<ol class="carousel-indicators">
+							<li data-target="#projectCarousel1" data-slide-to="0" class="active"></li>
+							<li data-target="#projectCarousel1" data-slide-to"$index" ng-repeat="image in galleryData2" ng-if="$index > 0"></li>
+						</ol>   
+						
 
-			<div class="thumbsshell">
-				<div class="thumbswrapper">
-					<ul>
-						<li ng-repeat="image in galleryData2">
-							<div class="thumbwrapper">
-								<a ng-href="" ng-click="scrollTo(image,$index)">
-									<img class="thumbnail" ng-src="{{IMAGE_LOCATION+2+'/'+image.image}}" />
-								</a>
+					   <!-- Carousel items -->
+						<div class="carousel-inner">
+							<div class="item active">
+									<div class="imgContainer">
+										<img ng-src="{{ IMAGE_LOCATION+2+'/'+galleryData2[0].image }}" class="img-responsive">
+									</div>
+									<div id="myCarouselInfoContainer"><p>{{galleryData2[0].desc}}</p></div>
 							</div>
-						</li>
-					</ul>
-				</div>
-			</div>
+							<div class="item" ng-repeat="image in galleryData2" ng-if="$index > 0">
+								<div class="imgContainer">
+									<img ng-src="{{ IMAGE_LOCATION+2+'/'+image.image }}" class="img-responsive">
+								</div>
+								<div id="myCarouselInfoContainer"><p>{{image.desc}}</p></div>
+							</div>
+							
+						</div>
+						<!-- Carousel nav -->
+						<a class="carousel-control left" href="#projectCarousel1" data-slide="prev">
+							<span class="glyphicon glyphicon-chevron-left"></span>
+						</a>
+						<a class="carousel-control right" href="#projectCarousel1" data-slide="next">
+							<span class="glyphicon glyphicon-chevron-right"></span>
+						</a>
+					
+					</div>
+					
+					
 		</div>
+
 
 		<div class="projectInfoContainer">
 			<p class ="projectInfo">My Specialisation Project (done Fall 2013 at NTNU) was on the topics of 'Augmented Reality' and 'Serious Games for Learning'. The idea was to make a serious game for
@@ -114,7 +142,10 @@
 			</p>
 		</div>
 		
+		
 	</div>
-	<div ng-show="hc.isSet(3)">
-	</div>
-</section>
+	
+
+
+
+</div>
