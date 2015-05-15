@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Example of Bootstrap 3 Tooltip Placement</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".tip-top").tooltip({
+        placement : 'top'
+    });
+    $(".tip-right").tooltip({
+        placement : 'right'
+    });
+    $(".tip-bottom").tooltip({
+        placement : 'bottom'
+    });
+    $(".tip-left").tooltip({
+        placement : 'left'
+    });
+});
+</script>
+<style type="text/css">
+	.bs-example{
+    	margin: 60px;
+    }
+</style>
+</head>
+<body>
+<div class="bs-example"> 
+    <ul class="list-inline">
+        <li><a href="#" data-toggle="tooltip" class="tip-top" data-original-title="Tooltip on the top side">Tooltip on top</a></li>
+        <li><a href="#" data-toggle="tooltip" class="tip-right" data-original-title="Tooltip on the right side">Tooltip on right</a></li>
+        <li><a href="#" data-toggle="tooltip" class="tip-bottom" data-original-title="Tooltip the on bottom side">Tooltip on bottom</a></li>
+        <li><a href="#" data-toggle="tooltip" class="tip-left" data-original-title="Tooltip on the left side">Tooltip on left</a></li>
+    </ul>
+</div>
+
+
+
+<div class="tooltip-demo well">
+            <p style="margin-bottom: 0;" class="muted">Tight pants next level keffiyeh <a rel="tooltip" href="#" data-original-title="first tooltip">you probably</a> haven't heard of them. Photo booth beard raw denim letterpress vegan messenger bag stumptown. Farm-to-table seitan, mcsweeney's fixie sustainable quinoa 8-bit american apparel <a title="Another tooltip" rel="tooltip" href="#">have a</a> terry richardson vinyl chambray. Beard stumptown, cardigans banh mi lomo thundercats. Tofu biodiesel williamsburg marfa, four loko mcsweeney's cleanse vegan chambray. A <a title="Another one here too" rel="tooltip" href="#">really ironic</a> artisan whatever keytar, scenester farm-to-table banksy Austin <a title="The last tip!" rel="tooltip" href="#">twitter handle</a> freegan cred raw denim single-origin coffee viral.
+            </p>
+          </div>
+</body>
+</html>    

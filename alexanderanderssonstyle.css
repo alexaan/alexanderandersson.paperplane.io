@@ -52,7 +52,7 @@ html{
 }
 
 #homelink {
-	color:white!important;
+	color:black!important;
 	text-decoration: none!important;
 }
 
@@ -65,6 +65,8 @@ html{
 	display: block;
 	height:100%;
 }
+
+
 
 #siteHeaderTextContainer{
 	width:75vw;
@@ -79,7 +81,7 @@ html{
 }
 
 #siteheaderEm, #siteheaderEmContainer{
-	color: gray;
+	color: #4C4C4C;
 }
 
 #project-coming-soon a, #project-coming-soon a:active, #project-coming-soon a:hover{
@@ -210,6 +212,7 @@ page-header > header{
 	margin:0;
 	width:100%;
 	clear:both;
+	padding: 10px 0 0 10px;
 }
 
 
@@ -436,6 +439,8 @@ footer .footerContent {
 	top:50%;
 	left:50%;
 	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%); 
+    -ms-transform:  translate(-50%, -50%);
 }
 
 .carousel-container .item .imgContainer{
