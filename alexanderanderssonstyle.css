@@ -61,9 +61,12 @@ html{
 	font-weight: lighter;
 	font-family: georgia,"times new roman",times,serif;
 	font-style: italic;
-	margin: 0 0 0 0!important;
+	margin: auto!important;
 	display: block;
 	height:100%;
+	width:100%;
+	text-align:center;
+	padding-top:10px;
 }
 
 
@@ -80,6 +83,7 @@ html{
 #siteheaderEmContainer {
 	display: block;
 	width:100%;
+	text-align:center;
 }
 
 #siteheaderEm, #siteheaderEmContainer{
