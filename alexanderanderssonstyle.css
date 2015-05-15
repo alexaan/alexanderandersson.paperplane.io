@@ -61,10 +61,12 @@ html{
 	font-weight: lighter;
 	font-family: georgia,"times new roman",times,serif;
 	font-style: italic;
-	margin: 0 2em 0 0;
+	margin: 0 0 0 0!important;
 	display: block;
 	height:100%;
 }
+
+
 
 
 
@@ -212,7 +214,6 @@ page-header > header{
 	margin:0;
 	width:100%;
 	clear:both;
-	padding: 10px 0 0 10px;
 }
 
 
